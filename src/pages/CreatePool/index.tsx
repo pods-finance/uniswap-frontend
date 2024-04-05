@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
-import { Token, WETH } from '@uniswap/sdk'
+import { ChainId, Token, WETH } from '@uniswap/sdk'
 import AppBody from '../AppBody'
 
 import Row, { AutoRow } from '../../components/Row'
@@ -28,10 +28,11 @@ enum STEP {
 }
 
 export default function CreatePool({ history, location }: RouteComponentProps) {
+  WETH[418] = new Token(418 as ChainId, '0x2B6649a5f04Ee1def4B8E07Df13040D816094eeD', 18, 'WETH', 'Wrapped LAC')
   const { chainId } = useActiveWeb3React()
   const [showSearch, setShowSearch] = useState<boolean>(false)
   const [activeField, setActiveField] = useState<number>(Fields.TOKEN0)
-
+  
   const [token0Address, setToken0Address] = useState<string>(WETH[chainId].address)
   const [token1Address, setToken1Address] = useState<string>()
 
