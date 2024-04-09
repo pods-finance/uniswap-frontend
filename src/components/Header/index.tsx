@@ -1,26 +1,24 @@
-import React from 'react'
+import * as React from 'react';
 import { Link as HistoryLink } from 'react-router-dom'
 
 import styled from 'styled-components'
 import { useTokenBalanceTreatingWETHasETH } from '../../state/wallet/hooks'
 
-import Row from '../Row'
 import Menu from '../Menu'
+import Row from '../Row'
 import Web3Status from '../Web3Status'
 
-import { Link } from '../../theme'
-import { Text } from 'rebass'
-import { WETH, ChainId } from '@uniswap/sdk'
+import { ChainId, WETH } from '@uniswap/sdk'
 import { isMobile } from 'react-device-detect'
-import { YellowCard } from '../Card'
+import { Text } from 'rebass'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
+import { YellowCard } from '../Card'
 
 import Logo from '../../assets/svg/logo.svg'
-import Wordmark from '../../assets/svg/wordmark.svg'
 import LogoDark from '../../assets/svg/logo_white.svg'
+import Wordmark from '../../assets/svg/wordmark.svg'
 import WordmarkDark from '../../assets/svg/wordmark_white.svg'
-import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
 
 const HeaderFrame = styled.div`
@@ -100,26 +98,6 @@ const UniIcon = styled(HistoryLink)<{ to: string }>`
   :hover {
     transform: rotate(-5deg);
   }
-`
-
-const MigrateBanner = styled(AutoColumn)`
-  width: 100%;
-  padding: 12px 0;
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.primary5};
-  color: ${({ theme }) => theme.primaryText1};
-  font-weight: 400;
-  text-align: center;
-  pointer-events: auto;
-  a {
-    color: ${({ theme }) => theme.primaryText1};
-  }
-
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 0;
-    display: none;
-  `};
 `
 
 const VersionLabel = styled.span<{ isV2?: boolean }>`
