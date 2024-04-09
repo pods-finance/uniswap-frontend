@@ -157,7 +157,7 @@ export default function Header() {
 
   return (
     <HeaderFrame>
-      <MigrateBanner>
+      {/* <MigrateBanner>
         Uniswap V2 is live! Read the&nbsp;
         <Link href="https://uniswap.org/blog/launch-uniswap-v2/">
           <b>blog post ↗</b>
@@ -167,7 +167,7 @@ export default function Header() {
           <b>migrate your liquidity ↗</b>
         </Link>
         .
-      </MigrateBanner>
+      </MigrateBanner> */}
       <RowBetween padding="1rem">
         <HeaderElement>
           <Title>
@@ -190,7 +190,7 @@ export default function Header() {
             {!isMobile && (
               <VersionToggle target="_self" href="https://v1.uniswap.exchange">
                 <VersionLabel isV2={true}>V2</VersionLabel>
-                <VersionLabel isV2={false}>V1</VersionLabel>
+                {/* <VersionLabel isV2={false}>V1</VersionLabel> */}
               </VersionToggle>
             )}
           </TestnetWrapper>
