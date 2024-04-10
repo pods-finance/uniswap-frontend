@@ -1,26 +1,24 @@
-import React from 'react'
+import * as React from 'react';
 import { Link as HistoryLink } from 'react-router-dom'
 
 import styled from 'styled-components'
 import { useTokenBalanceTreatingWETHasETH } from '../../state/wallet/hooks'
 
-import Row from '../Row'
 import Menu from '../Menu'
+import Row from '../Row'
 import Web3Status from '../Web3Status'
 
-import { Link } from '../../theme'
-import { Text } from 'rebass'
-import { WETH, ChainId } from '@uniswap/sdk'
+import { ChainId, WETH } from '@uniswap/sdk'
 import { isMobile } from 'react-device-detect'
-import { YellowCard } from '../Card'
+import { Text } from 'rebass'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
+import { YellowCard } from '../Card'
 
 import Logo from '../../assets/svg/logo.svg'
-import Wordmark from '../../assets/svg/wordmark.svg'
 import LogoDark from '../../assets/svg/logo_white.svg'
+import Wordmark from '../../assets/svg/wordmark.svg'
 import WordmarkDark from '../../assets/svg/wordmark_white.svg'
-import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
 
 const HeaderFrame = styled.div`
@@ -102,26 +100,6 @@ const UniIcon = styled(HistoryLink)<{ to: string }>`
   }
 `
 
-const MigrateBanner = styled(AutoColumn)`
-  width: 100%;
-  padding: 12px 0;
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.primary5};
-  color: ${({ theme }) => theme.primaryText1};
-  font-weight: 400;
-  text-align: center;
-  pointer-events: auto;
-  a {
-    color: ${({ theme }) => theme.primaryText1};
-  }
-
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 0;
-    display: none;
-  `};
-`
-
 const VersionLabel = styled.span<{ isV2?: boolean }>`
   padding: ${({ isV2 }) => (isV2 ? '0.15rem 0.5rem 0.16rem 0.45rem' : '0.15rem 0.5rem 0.16rem 0.35rem')};
   border-radius: 14px;
@@ -157,7 +135,7 @@ export default function Header() {
 
   return (
     <HeaderFrame>
-      <MigrateBanner>
+      {/* <MigrateBanner>
         Uniswap V2 is live! Read the&nbsp;
         <Link href="https://uniswap.org/blog/launch-uniswap-v2/">
           <b>blog post ↗</b>
@@ -167,7 +145,7 @@ export default function Header() {
           <b>migrate your liquidity ↗</b>
         </Link>
         .
-      </MigrateBanner>
+      </MigrateBanner> */}
       <RowBetween padding="1rem">
         <HeaderElement>
           <Title>
@@ -190,7 +168,7 @@ export default function Header() {
             {!isMobile && (
               <VersionToggle target="_self" href="https://v1.uniswap.exchange">
                 <VersionLabel isV2={true}>V2</VersionLabel>
-                <VersionLabel isV2={false}>V1</VersionLabel>
+                {/* <VersionLabel isV2={false}>V1</VersionLabel> */}
               </VersionToggle>
             )}
           </TestnetWrapper>

@@ -1,7 +1,7 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@uniswap/sdk'
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-export const ROUTER_ADDRESS = '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a'
+export const ROUTER_ADDRESS = '0xeDcAB5486F21E306f7e49599E8f3893F71098693'
 
 // used for display in the default list when adding liquidity
 export const COMMON_BASES = {
@@ -16,7 +16,12 @@ export const COMMON_BASES = {
     new Token(ChainId.RINKEBY, '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735', 18, 'DAI', 'Dai Stablecoin')
   ],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
-  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]]
+  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  418: [
+    new Token(418 as ChainId, '0x2B6649a5f04Ee1def4B8E07Df13040D816094eeD', 18, 'WETH', 'Wrapped LAC'),
+    new Token(418 as ChainId, '0x7998FF41924595a940720Bc16eB6cCE1699f9a6a', 18, 'DAI', 'Dai Stablecoin'),
+    new Token(418 as ChainId, '0x8cAbc5680544150b21d436977D9aCDC5D66Bc812', 18, 'USDT', 'Tether USD')
+  ]
 }
 
 const MAINNET_WALLETS = {

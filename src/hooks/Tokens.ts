@@ -24,6 +24,7 @@ export function useAllTokens(): { [address: string]: Token } {
         { ...ALL_TOKENS[chainId as ChainId] }
       )
 
+    WETH[418 as ChainId] = new Token(418 as ChainId, '0x2B6649a5f04Ee1def4B8E07Df13040D816094eeD', 18, 'WETH', 'Wrapped LAC')
     const weth = WETH[chainId as ChainId]
     if (weth) {
       // we have to replace it as a workaround because if it is automatically
